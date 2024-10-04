@@ -1,0 +1,156 @@
+[
+    {
+        "id": "a068af464263e5c3",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e636d41b618d4c1f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.80.9",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5f6722ae0ae88dae",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "prac1mqtt_mosquitto_1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0cccf7bf88465f84",
+        "type": "inject",
+        "z": "a068af464263e5c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hola TESI",
+        "payloadType": "str",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "44445555fde0f792"
+            ]
+        ]
+    },
+    {
+        "id": "44445555fde0f792",
+        "type": "mqtt out",
+        "z": "a068af464263e5c3",
+        "name": "",
+        "topic": "/test/ciberseguridad",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5f6722ae0ae88dae",
+        "x": 370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d6e1f5379b7d1a05",
+        "type": "mqtt in",
+        "z": "a068af464263e5c3",
+        "name": "",
+        "topic": "/test/ciberseguridad",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5f6722ae0ae88dae",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "13d4d4a0264a1f6f"
+            ]
+        ]
+    },
+    {
+        "id": "13d4d4a0264a1f6f",
+        "type": "debug",
+        "z": "a068af464263e5c3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 360,
+        "wires": []
+    }
+]
